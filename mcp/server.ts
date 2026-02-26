@@ -26,6 +26,11 @@ const server = new Server(
   }
 );
 
+import { listLedgerFiles } from "./ledgerIndexer.js";
+
+const files = listLedgerFiles();
+console.log("Ledger Files:", files);
+
 /**
  * Tool registry
  * These describe WHAT the server exposes, not HOW it works
