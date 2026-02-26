@@ -168,7 +168,7 @@ docker-compose up -d
 ## Contributing
 
 We welcome contributions! Please see:
-- **[Contributing Guide](documentation/contributing.md)** - How to contribute  
+- **[Contributing Guide](contributing.md)** - How to contribute  
 
 ---
 
