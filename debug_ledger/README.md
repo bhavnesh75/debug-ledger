@@ -78,6 +78,28 @@ If an entry cannot prevent a future regression, it does not qualify.
 
 ---
 
+## File Structure Rule
+
+Each ledger entry must live in its own file.
+
+Do not append multiple entries into a single file.
+
+Use descriptive filenames in the format:
+
+- constraints-<topic>.md
+- regressions-<area>.md
+- rejected_fixes-<topic>.md
+- incidents-<area>.md
+
+Examples:
+- constraints-api.md
+- regressions-cart.md
+- rejected_fixes-timeout.md
+
+One failure = one file.
+
+---
+
 ## What Does NOT Belong in the Ledger
 
 Do *not* add:
@@ -94,6 +116,16 @@ Do *not* duplicate:
 - Issue trackers
 - Test cases
 - Documentation
+
+## Do Not Aggregate Entries
+
+Do not create large files containing many unrelated issues.
+
+The ledger is indexed by filename.
+
+Future agents and developers rely on file names to decide what to read.
+
+Keep entries isolated.
 
 This ledger is *small by design*.
 
