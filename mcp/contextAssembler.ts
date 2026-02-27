@@ -1,4 +1,4 @@
-import { readLedgerFile } from "./ledgerReader";
+import { readLedgerFile } from "./ledgerReader.js";
 
 /**
  * C3 — Context Assembly
@@ -41,7 +41,7 @@ export function assembleLedgerContext(input: string): string {
     .map((f) => f.replace(/[^a-z0-9._-]/gi, ""));
 
   // Remove duplicate filenames
-  const uniqueFiles = [...new Set(normalized)];
+  const uniqueFiles = [...new Set(rawFiles)];
 
   let finalContext = "";
 
