@@ -29,12 +29,15 @@ const server = new Server(
 import { listLedgerFiles } from "./ledgerIndexer.js";
 
 const files = listLedgerFiles();
-console.log("Ledger Files:", files);
+
+aa line B4 task vakhte kadhvani avi hati
+// console.log("Ledger Files:", files);
 
 import { readLedgerFile } from "./ledgerReader.js";
 
-const data = readLedgerFile("incidents.md");
-console.log("\nLedger Content:\n", data);
+aa line B4 task vakhte kadhvani avi hati
+// const data = readLedgerFile("incidents.md");
+// console.log("\nLedger Content:\n", data);
 
 /**
  * Tool registry
@@ -65,20 +68,21 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           required: ["filename"],
         },
       },
-      {
-        name: "search_ledger",
-        description: "Search debug ledger for matching entries",
-        inputSchema: {
-          type: "object",
-          properties: {
-            query: {
-              type: "string",
-              description: "Search keyword",
-            },
-          },
-          required: ["query"],
-        },
-      },
+      aa line B4 task vakhte kadhvani avi hati
+      // {
+      //   name: "search_ledger",
+      //   description: "Search debug ledger for matching entries",
+      //   inputSchema: {
+      //     type: "object",
+      //     properties: {
+      //       query: {
+      //         type: "string",
+      //         description: "Search keyword",
+      //       },
+      //     },
+      //     required: ["query"],
+      //   },
+      // },
     ],
   };
 });
@@ -92,37 +96,73 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   // BUSINESS LOGIC IMPLEMENTED IN PRs
   // This skeleton intentionally returns placeholders only
 
+  aa line B4 task vakhte replace karvani avi hati  
+  // switch (name) {
+  //   case "list_ledger_files":
+  //     return {
+  //       content: [
+  //         {
+  //           type: "text",
+  //           text: "Ledger file listing not implemented yet.",
+  //         },
+  //       ],
+  //     };
+
+  //   case "read_ledger_file":
+  //     return {
+  //       content: [
+  //         {
+  //           type: "text",
+  //           text: "Ledger file reading not implemented yet.",
+  //         },
+  //       ],
+  //     };
+
+  //   case "search_ledger":
+  //     return {
+  //       content: [
+  //         {
+  //           type: "text",
+  //           text: "Ledger search not implemented yet.",
+  //         },
+  //       ],
+  //     };
+
+  //   default:
+  //     throw new Error(`Unknown tool: ${name}`);
+  // }
+
   switch (name) {
-    case "list_ledger_files":
+    case "list_ledger_files": {
+      const files = listLedgerFiles();
+  
       return {
         content: [
           {
             type: "text",
-            text: "Ledger file listing not implemented yet.",
+            text: JSON.stringify(files, null, 2),
           },
         ],
       };
-
-    case "read_ledger_file":
+    }
+  
+    case "read_ledger_file": {
+      const { filename } = request.params.arguments as {
+        filename: string;
+      };
+  
+      const content = readLedgerFile(filename);
+  
       return {
         content: [
           {
             type: "text",
-            text: "Ledger file reading not implemented yet.",
+            text: content,
           },
         ],
       };
-
-    case "search_ledger":
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Ledger search not implemented yet.",
-          },
-        ],
-      };
-
+    }
+  
     default:
       throw new Error(`Unknown tool: ${name}`);
   }
