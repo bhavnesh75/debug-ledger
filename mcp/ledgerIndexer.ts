@@ -29,7 +29,7 @@ export function listLedgerFiles(): LedgerFile[] {
 
   // only markdown files
   const ledgerFiles = files
-    .filter((file) => file.endsWith(".md"))
+    .filter((file) => file.endsWith(".md") && file !== "README.md")
     .map((file) => ({
       name: file,
       path: path.join(LEDGER_DIR, file),
