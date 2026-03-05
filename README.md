@@ -121,47 +121,46 @@ The ledger grows slowly — only when reality demands it.
 
 ## Quick Start
 
-### Installation
+## Installation
 
-**Option 1: NPM Package (Recommended)**
+1. Open the your project in VS Code.
 
-```bash
-# Install globally
-npm install -g pino-pretty 
-npm install -g lynkr
+2. Extract `debug-ledger.zip` inside your project folder..
 
-lynkr start
-```
-
-**Option 2: Git Clone**
+3. Open the terminal.
 
 ```bash
-# Clone repository
-git clone https://github.com/hi0001234d/debug-ledger.git
-cd Lynkr
-
-# Install dependencies
+cd debug-ledger
 npm install
-
-# Create .env from example
-cp .env.example .env
-
-# Edit .env with your provider credentials
-nano .env
-
-# Start server
-npm start
+npm run build
 ```
 
-**Node.js Compatibility:**
-- **Node 20-24**: Full support with all features  
-- **Node 25+**: Full support (native modules auto-rebuild, babel fallback for code parsing)  
+4. After running the above commands, the build file will be available in your project at:
 
-**Option 3: Docker**
-
-```bash
-docker-compose up -d
 ```
+debug-ledger/dist/mcp/server.js
+```
+
+5. Open the VS Code Extensions marketplace and download the **Kilo Code** extension. (Not to install Kilo Code)
+
+6. In Kilo Code marketplace go to **MCP**.
+
+7. These MCP servers are maintained by the community. Click here to edit your own MCP settings.
+
+8. Edit project MCP and add the following MCP code:
+
+```json
+{
+  "mcpServers": {
+    "debug-ledger": {
+      "command": "node",
+      "args": ["dist/mcp/server.js"],
+      "cwd": "your debug-ledger repo path"
+    }
+  }
+}
+```
+9. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
 
 ---
 
