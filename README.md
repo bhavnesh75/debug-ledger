@@ -109,8 +109,10 @@ Simplicity is the feature.
 ## How to Try It (Conceptually)
 
 You don’t need new workflows.
-1. Add a ledger entry *after* a painful bug or incident  
-2. Keep it short and factual  
+1. Add a ledger entry after a painful bug or incident.  
+Create the entry inside the `debug_ledger` folder in the cloned MCP project.  
+Create a new `.md` file with a meaningful name for your entry and add it there. The file name must start with one of the supported prefixes: `constraints`, `incidents`, `regressions`, or `rejected_fixes`.
+2. Keep your entry it short and factual  
 3. Explain what failed and what must not be repeated  
 4. Let AI tools see it during future debugging sessions  
 
