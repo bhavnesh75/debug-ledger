@@ -7,9 +7,10 @@
 ---
 
 ## Example: AI Debug With Memory
-![Example: AI Debug With Memory](./example-ai-debug-with-memory.gif);
+![Example: AI Debug With Memory](./example-ai-debug-with-memory.gif)
+6. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
 
-**Note:**  Do not forget to add this line **"Before starting, call the list_ledger_files MCP tool and show me the output."** at last in every prompt when you want to apply your project constraint or debug memory.
+**Note:** Do not forget to add this line **"Before starting, call the list_ledger_files MCP tool and show me the output."** at last in every prompt when you want to apply your project constraint or debug memory.
 ---
 
 ## The Problem
