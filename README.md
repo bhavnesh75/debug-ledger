@@ -145,13 +145,9 @@ npm run build
 debug-ledger/dist/mcp/server.js
 ```
 
-5. Open the VS Code Extensions marketplace and download the **Kilo Code** extension. (Not to install Kilo Code)
-
-6. In Kilo Code marketplace go to **MCP**.
-
-7. These MCP servers are maintained by the community. Click here to edit your own MCP settings.
-
-8. Edit project MCP and add the following MCP code:
+5. Open your editor MCP settings file.  
+(If you are using editors like Kilo Code, Cursor, or any other editor that supports MCP.)
+Add the following MCP configuration in your project MCP settings:
 
 ```json
 {
@@ -164,7 +160,7 @@ debug-ledger/dist/mcp/server.js
   }
 }
 ```
-9. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
+6. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
 
 ---
 
