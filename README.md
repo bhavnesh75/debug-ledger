@@ -123,9 +123,13 @@ The ledger grows slowly — only when reality demands it.
 
 ## Installation
 
-1. Open the your project in VS Code.
+1. Open your project in VS Code.
 
-2. Extract `debug-ledger.zip` inside your project folder..
+2. Clone the debug-ledger repository from GitHub using the following command.
+
+```bash
+git clone https://github.com/bhavnesh75/debug-ledger.git
+```
 
 3. Open the terminal.
 
