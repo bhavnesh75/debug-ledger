@@ -6,6 +6,12 @@
 
 ---
 
+## Example: AI Debug With Memory
+![Example: AI Debug With Memory](./example-ai-debug-with-memory.gif)
+
+**Note:** Do not forget to add this line in every prompt when you want to apply your project constraint or debug memory.
+---
+
 ## The Problem
 
 AI tools are very good at understanding code as it exists today.  
@@ -112,7 +118,7 @@ You don’t need new workflows.
 1. Add a ledger entry after a painful bug or incident.  
 Create the entry inside the `debug_ledger` folder in the cloned MCP project.  
 Create a new `.md` file with a meaningful name for your entry and add it there. The file name must start with one of the supported prefixes: `constraints`, `incidents`, `regressions`, or `rejected_fixes`.
-2. Keep your entry it short and factual  
+2. Keep your entry short and factual  
 3. Explain what failed and what must not be repeated  
 4. Let AI tools see it during future debugging sessions  
 
@@ -164,6 +170,7 @@ Add the following MCP configuration in your project MCP settings:
 ```
 6. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
 
+**Note:** Do not forget to add this line in every prompt when you want to apply your project constraint or debug memory.
 ---
 
 ## Contributing
