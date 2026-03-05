@@ -9,7 +9,7 @@
 ## Example: AI Debug With Memory
 ![Example: AI Debug With Memory](./example-ai-debug-with-memory.gif)
 
-**Note:** Do not forget to add this line in every prompt when you want to apply your project constraint or debug memory.
+**Note:**  Do not forget to add this line in every prompt when you want to apply your project constraint or debug memory.
 ---
 
 ## The Problem
@@ -170,7 +170,7 @@ Add the following MCP configuration in your project MCP settings:
 ```
 6. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
 
-**Note:** Do not forget to add this line in every prompt when you want to apply your project constraint or debug memory.
+**Note:**  Do not forget to add this line in every prompt when you want to apply your project constraint or debug memory.
 ---
 
 ## Contributing
