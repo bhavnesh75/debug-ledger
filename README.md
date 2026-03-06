@@ -6,6 +6,13 @@
 
 ---
 
+## Example: AI Debug With Memory
+![Example: AI Debug With Memory](./example-ai-debug-with-memory.gif)
+
+**Note:** Do not forget to add this line **"Before starting, call the list_ledger_files MCP tool and show me the output."** at last in every prompt when you want to apply your project constraint or debug memory.
+
+---
+
 ## The Problem
 
 AI tools are very good at understanding code as it exists today.  
@@ -109,8 +116,10 @@ Simplicity is the feature.
 ## How to Try It (Conceptually)
 
 You don’t need new workflows.
-1. Add a ledger entry *after* a painful bug or incident  
-2. Keep it short and factual  
+1. Add a ledger entry after a painful bug or incident.  
+Create the entry inside the `debug_ledger` folder in the cloned MCP project.  
+Create a new `.md` file with a meaningful name for your entry and add it there. The file name must start with one of the supported prefixes: `constraints`, `incidents`, `regressions`, or `rejected_fixes`.
+2. Keep your entry short and factual  
 3. Explain what failed and what must not be repeated  
 4. Let AI tools see it during future debugging sessions  
 
@@ -121,47 +130,48 @@ The ledger grows slowly — only when reality demands it.
 
 ## Quick Start
 
-### Installation
+## Installation
 
-**Option 1: NPM Package (Recommended)**
+1. Open your project in VS Code.
+
+2. Clone the debug-ledger repository from GitHub using the following command.
 
 ```bash
-# Install globally
-npm install -g pino-pretty 
-npm install -g lynkr
-
-lynkr start
+git clone https://github.com/bhavnesh75/debug-ledger.git
 ```
 
-**Option 2: Git Clone**
+3. Open the terminal.
 
 ```bash
-# Clone repository
-git clone https://github.com/hi0001234d/debug-ledger.git
-cd Lynkr
-
-# Install dependencies
+cd debug-ledger
 npm install
-
-# Create .env from example
-cp .env.example .env
-
-# Edit .env with your provider credentials
-nano .env
-
-# Start server
-npm start
+npm run build
 ```
 
-**Node.js Compatibility:**
-- **Node 20-24**: Full support with all features  
-- **Node 25+**: Full support (native modules auto-rebuild, babel fallback for code parsing)  
+4. After running the above commands, the build file will be available in your project at:
 
-**Option 3: Docker**
-
-```bash
-docker-compose up -d
 ```
+debug-ledger/dist/mcp/server.js
+```
+
+5. Open your editor MCP settings file.  
+(If you are using editors like Kilo Code, Cursor, or any other editor that supports MCP.)
+Add the following MCP configuration in your project MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "debug-ledger": {
+      "command": "node",
+      "args": ["dist/mcp/server.js"],
+      "cwd": "your debug-ledger repo path"
+    }
+  }
+}
+```
+6. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
+
+**Note:** Do not forget to add this line **"Before starting, call the list_ledger_files MCP tool and show me the output."** at last in every prompt when you want to apply your project constraint or debug memory.
 
 ---
 
