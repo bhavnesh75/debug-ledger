@@ -155,7 +155,7 @@ That's it. `debug_ledger/` folder with 16 example files will be automatically cr
  
 > **Node.js 18+** required.
 
-![debug-ledger Installation](https://github.com/bhavnesh75/debug-ledger/blob/main/kilocode.jpg)
+![debug-ledger Installation](https://github.com/bhavnesh75/debug-ledger/blob/main/Kilo%20code.png)
  
 ---
  
