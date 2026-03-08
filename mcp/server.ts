@@ -6,6 +6,7 @@ import {
   CallToolRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { assembleLedgerContext } from "./contextAssembler.js";
+import { setupIfNeeded } from "./setup.js";
 /**
  * debug-ledger MCP server
  *
@@ -26,10 +27,11 @@ const server = new Server(
     },
   }
 );
+setupIfNeeded();
 
 import { listLedgerFiles } from "./ledgerIndexer.js";
 
-const files = listLedgerFiles();
+// const files = listLedgerFiles();
 
 import { readLedgerFile } from "./ledgerReader.js";
 

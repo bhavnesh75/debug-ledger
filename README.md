@@ -7,7 +7,7 @@
 ---
 
 ## Example: AI Debug With Memory
-![Example: AI Debug With Memory](./example-ai-debug-with-memory.gif)
+![Example: AI Debug With Memory](https://github.com/hi0001234d/debug-ledger/blob/main/example-ai-debug-with-memory.gif)
 
 **Note:** Do not forget to add this line **"Before starting, call the list_ledger_files MCP tool and show me the output."** at last in every prompt when you want to apply your project constraint or debug memory.
 
@@ -131,47 +131,41 @@ The ledger grows slowly — only when reality demands it.
 ## Quick Start
 
 ## Installation
-
-1. Open your project in VS Code.
-
-2. Clone the debug-ledger repository from GitHub using the following command.
-
-```bash
-git clone https://github.com/bhavnesh75/debug-ledger.git
-```
-
-3. Open the terminal.
-
-```bash
-cd debug-ledger
-npm install
-npm run build
-```
-
-4. After running the above commands, the build file will be available in your project at:
-
-```
-debug-ledger/dist/mcp/server.js
-```
-
-5. Open your editor MCP settings file.  
-(If you are using editors like Kilo Code, Cursor, or any other editor that supports MCP.)
-Add the following MCP configuration in your project MCP settings:
-
+ 
+### Step 1 — Add MCP Config
+ 
+Add this to your MCP settings file (Kilo Code / Cursor / Claude Desktop):
 ```json
 {
   "mcpServers": {
     "debug-ledger": {
-      "command": "node",
-      "args": ["dist/mcp/server.js"],
-      "cwd": "your debug-ledger repo path"
+      "command": "npx",
+      "args": ["-y", "debug-ledger-mcp"],
+      "cwd": "/your/project/path"
     }
   }
 }
 ```
-6. Replace your `debug-ledger repo path` with the actual path of your `debug-ledger` folder.
+ 
+Replace `/your/project/path` with your actual project folder path.
+ 
+### Step 2 — Restart Your Editor
+ 
+That's it. `debug_ledger/` folder with 16 example files will be automatically created in your project.
+ 
+> **Node.js 18+** required.
 
-**Note:** Do not forget to add this line **"Before starting, call the list_ledger_files MCP tool and show me the output."** at last in every prompt when you want to apply your project constraint or debug memory.
+![](.example-ai-debug-with-memory.gif)
+ 
+---
+ 
+## Try It
+ 
+After setup, add this line to any AI prompt:
+ 
+> *"Before starting, call the list_ledger_files MCP tool and show me the output."*
+ 
+If your editor shows the ledger files — it's working. 
 
 ---
 

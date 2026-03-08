@@ -22,7 +22,7 @@ export type LedgerFile = {
 export function listLedgerFiles(): LedgerFile[] {
   // check folder exists
   if (!fs.existsSync(LEDGER_DIR)) {
-    throw new Error("debug_ledger folder not found");
+    return [];
   }
 
   const files = fs.readdirSync(LEDGER_DIR);

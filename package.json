@@ -1,21 +1,23 @@
 {
   "name": "debug-ledger-mcp",
-  "version": "0.1.0",
+  "version": "0.1.9",
   "description": "Read-only debug memory for AI — a repo-local ledger of past bugs, rejected fixes, and historical constraints so AI debugs with context, not amnesia.",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=18"
   },
   "bin": {
     "debug-ledger-mcp": "./dist/mcp/server.js"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "debug_ledger/"
   ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/mcp/server.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "postinstall": "node dist/mcp/setup.js"
   },
   "license": "MIT",
   "devDependencies": {
